@@ -1,0 +1,26 @@
+id,question,answer,category
+1,CPU utilization is above 90% on Linux server,"Login to the server using SSH. Run 'top', 'htop', or 'ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head' to identify high CPU processes. Verify whether any scheduled backup or batch job is running. Restart the application service if approved. If CPU remains above threshold, escalate to the Application Team.",Linux
+2,Memory utilization exceeded 90%,"Check memory usage using 'free -h', 'vmstat', and 'top'. Identify memory-consuming processes. Clear cache if applicable. Restart the application service after approval. Escalate if memory leak is suspected.",Linux
+3,Disk utilization exceeded 85%,"Run 'df -h' to check filesystem usage and 'du -sh /*' to identify large directories. Delete unnecessary log files and temporary files. Extend filesystem if required after approval.",Linux
+4,Server is not reachable from monitoring,"Verify server accessibility using ping. Check SSH or RDP access. Verify network connectivity, firewall rules, and server power status. Escalate to Infrastructure Team if server remains inaccessible.",Infrastructure
+5,Windows service is stopped,"Open Services.msc or use PowerShell Get-Service. Restart the stopped service if approved. Verify application functionality and review Event Viewer logs for errors.",Windows
+6,Port Down alert received on Cisco switch,"Login to the switch. Run 'show interface status' and 'show interface'. Verify cable connection, interface errors, and remote device status. Contact onsite engineer if physical issue is found.",Network
+7,Link Flapping alert detected,"Run 'show logging' and 'show interface'. Check interface errors, duplex mismatch, speed mismatch, and faulty cables. Replace cable or move to another switch port if required.",Network
+8,SNMP not responding,"Verify SNMP service is running. Check firewall rules, SNMP community string, monitoring server connectivity, and network reachability.",Monitoring
+9,Database listener is down,"Run 'lsnrctl status'. If listener is stopped, execute 'lsnrctl start'. Verify database connectivity after restart. Escalate to DBA Team if issue persists.",Database
+10,Application service is not responding,"Check application logs and process status. Restart the application service if approved. Verify application accessibility after restart. Escalate to Application Support if issue continues.",Application
+11,Ping failure detected,"Verify ICMP connectivity using ping. Check routing path using traceroute. Verify firewall rules and network device status.",Network
+12,Firewall interface is down,"Login to firewall. Verify interface status, HA synchronization, interface errors, and recent configuration changes. Escalate to Security Team if hardware issue is suspected.",Firewall
+13,SSL certificate expiry alert,"Check certificate expiration date. Generate CSR if renewal is required. Install renewed certificate and restart web service after change approval.",Security
+14,Backup job failed,"Review backup logs to identify failure reason. Verify backup server connectivity, storage availability, and credentials. Re-run backup after resolving issue.",Backup
+15,High network latency detected,"Run ping and traceroute. Verify interface utilization, packet drops, and bandwidth usage. Contact ISP if WAN circuit issue is identified.",Network
+16,High packet loss observed,"Check interface errors using 'show interface'. Verify optical power levels and WAN provider status. Replace faulty cable if required.",Network
+17,Disk inode utilization exceeded threshold,"Run 'df -i' to check inode usage. Remove unnecessary small files consuming inodes. Verify inode utilization after cleanup.",Linux
+18,Swap memory utilization is high,"Check swap usage using 'free -h'. Identify memory-intensive processes. Restart application if required and investigate possible memory leak.",Linux
+19,Filesystem mounted as read-only,"Check system logs using 'dmesg' and '/var/log/messages'. Verify filesystem integrity using fsck during maintenance window. Escalate if storage issue exists.",Linux
+20,Oracle tablespace utilization exceeded threshold,"Login to Oracle database. Check tablespace usage. Add datafile or extend tablespace after DBA approval.",Database
+21,CPU utilization is high on Windows server,"Open Task Manager or Resource Monitor. Identify high CPU processes. Restart application service if approved and verify CPU utilization.",Windows
+22,DNS service not responding,"Verify DNS service status. Restart DNS service if stopped. Check zone configuration and network connectivity.",Windows
+23,DHCP service stopped,"Verify DHCP service is running. Restart service if required. Check DHCP scope availability and Event Viewer logs.",Windows
+24,NTP synchronization failed,"Verify NTP service status and configured time server. Restart NTP service and verify time synchronization.",Infrastructure
+25,How should a NOC engineer close an incident ticket?,"Verify alert is cleared, validate service availability, document root cause, actions taken, validation performed, and update ticket status to Resolved before closure.",ITSM
