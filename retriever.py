@@ -1,35 +1,4 @@
 
-#     tickets_store = Chroma(
-#         collection_name="tickets",
-#         embedding_function=embeddings,
-#         persist_directory=CHROMA_DIR,
-#     )
-#     guides_store = Chroma(
-#         collection_name="guides",
-#         embedding_function=embeddings,
-#         persist_directory=CHROMA_DIR,
-#     )
-
-#     faq_retriever     = faq_store.as_retriever(search_kwargs={"k": k_faq})
-#     tickets_retriever = tickets_store.as_retriever(search_kwargs={"k": k_tickets})
-#     guides_retriever  = guides_store.as_retriever(search_kwargs={"k": k_guides})
-
-#     def retrieve(query: str) -> list[Document]:
-#         return (
-#             faq_retriever.invoke(query)
-#             + tickets_retriever.invoke(query)
-#             + guides_retriever.invoke(query)
-#         )
-
-#     return RunnableLambda(retrieve)
-
-"""
-Builds a merged retriever across all NOC Chroma collections:
-
-- noc          : NOC FAQ / SOP
-- noc_tickets  : Resolved NOC incidents
-- noc_guides   : NOC PDF guide
-"""
 
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
