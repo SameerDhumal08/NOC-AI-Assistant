@@ -1,13 +1,4 @@
-# """
-# Builds a merged retriever across all three Chroma collections:
-#   - faq     : FAQ entries (no chunking — 1 row = 1 doc)
-#   - tickets : resolved support tickets (no chunking — 1 ticket = 1 doc)
-#   - guides  : PDF guide chunks (RecursiveCharacterTextSplitter applied at ingest)
-# """
-# from langchain_chroma import Chroma
-# from langchain_huggingface import HuggingFaceEmbeddings
-# from langchain_core.runnables import RunnableLambda
-# from langchain_core.documents import Document
+
 
 # CHROMA_DIR  = "chroma_store"
 # EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
